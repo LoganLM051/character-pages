@@ -31,6 +31,19 @@ async function LoadPage() {
         statusText.textContent = "Could not reach Rick and Morty API. Check internet connection.";
     }
 }
+// function for the next page
+    function nextPage () {
+        page = page + 1;
+        LoadPage()
+    }
+    nextButton.addEventListener("click", nextPage);
+// function for the previous page 
+    function prevPage () {
+        page = page - 1;
+        LoadPage();
+    }
+    prevButton.addEventListener("click", prevPage);
+// function for showing character cards
 
     function showCards (characters) {
         characters.forEach (function (character){
